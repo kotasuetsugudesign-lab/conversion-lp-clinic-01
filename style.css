@@ -1,0 +1,1454 @@
+/* =========================================
+   Root Variables
+========================================= */
+:root {
+  --color-primary: #1F3A5F;
+  --color-secondary: #2E6FB6;
+  --color-accent: #F28C28;
+  --color-accent-dark: #d67a1f;
+
+  --color-bg-light: #F5F7FA;
+  --color-text: #333333;
+  --color-white: #FFFFFF;
+
+  --color-border: #dddddd;
+  --color-shadow: rgba(0, 0, 0, 0.08);
+  --color-error: #e74c3c;
+
+  --max-width: 1100px;
+  --section-padding: 100px;
+  --radius: 8px;
+  --transition: 0.3s ease;
+}
+
+/* =========================================
+   Base Reset
+========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--color-text);
+  background: var(--color-white);
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+section {
+  padding: var(--section-padding) 0;
+}
+
+.sp-only {
+  display: none;
+}
+
+.pc-only {
+  display: block;
+}
+/* =========================================
+   Button
+========================================= */
+.btn {
+  display: inline-block;
+  background: var(--color-accent);
+  color: var(--color-white);
+  padding: 15px 40px;
+  border-radius: var(--radius);
+  font-weight: bold;
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--color-accent-dark);
+  transform: translateY(-2px);
+}
+
+.btn-light {
+  background: var(--color-white);
+  color: var(--color-primary);
+}
+
+/* =========================================
+   Header
+========================================= */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  list-style: none;
+}
+
+.nav-menu li {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  font-size: 15px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: #0d2d59;
+}
+
+/* CTAボタン */
+.nav-cta {
+  padding: 10px 20px;
+ background: var(--color-accent);
+  color: #fff;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-cta:hover {
+  opacity: 0.9;
+}
+
+  .menu-close{
+display:none;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: var(--color-primary);
+}
+
+
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: var(--color-primary);
+}
+
+.hamburger.active{
+display:none;
+}
+
+/* =========================================
+   Hero Section（CV特化・最終版）
+========================================= */
+.hero {
+  position: relative;
+  padding-top: 200px;
+  padding-bottom: 160px;
+  background:
+    linear-gradient(rgba(31,58,95,0.75), rgba(31,58,95,0.75)),
+    url('img/hero.img') center/cover no-repeat;
+  color: var(--color-white);
+  text-align: center;
+}
+
+.hero-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* メインコピー */
+.hero-title {
+  font-size: 3rem;
+  line-height: 1.4;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+/* サブコピー */
+.hero-subtitle {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  margin-bottom: 40px;
+  opacity: 0.95;
+}
+
+/* 信頼要素 */
+.hero-features {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+  font-size: 0.95rem;
+}
+
+.hero-features li {
+  background: rgba(255,255,255,0.1);
+  padding: 10px 18px;
+  border-radius: 30px;
+  backdrop-filter: blur(3px);
+}
+
+/* CTA */
+.hero-cta {
+  margin-top: 10px;
+}
+
+.hero-btn {
+  font-size: 1.1rem;
+  padding: 18px 50px;
+  border-radius: 50px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.hero-btn strong {
+  font-size: 1.3rem;
+}
+
+.hero-note {
+  margin-top: 15px;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+/* =========================================
+   Section Title
+========================================= */
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  background: var(--color-accent);
+  display: block;
+  margin: 15px auto 0;
+}
+
+.section-lead {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+ color: var(--color-text);
+    line-height: 1.8;
+     margin: 20px 0 60px;
+}
+
+/* =========================================
+   Concerns Section（売れる型強化版）
+========================================= */
+
+.concerns-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* ← PCは2×2固定 */
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+
+.concern-item {
+  background: #fbfcfe; /* ← ほんの少しだけ柔らかい白 */
+  padding: 35px 30px;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-left: 3px solid var(--color-secondary); /* ← 縦ライン追加 */
+  transition: all 0.3s ease;
+}
+
+.concern-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.08);
+}
+
+.concern-icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;   /* ← 少し大きく */
+  height: 32px;
+  background: var(--color-primary); /* ← 少し濃いネイビー */
+  color: var(--color-white);
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: bold;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* ← ほんのり立体感 */
+}
+
+.concern-item p {
+  text-align: left;
+  font-weight: 500;
+  line-height: 1.6;
+}
+.concerns-bridge {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 1.1rem;
+  color: var(--color-text);
+}
+
+.concerns-bridge strong {
+  color: var(--color-primary);
+}
+
+/* =========================================
+   why Section
+========================================= */
+
+.why-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.why-card {
+  background: var(--color-white);
+  padding: 40px;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 20px var(--color-shadow);
+}
+
+.why-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.why-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.why-card li {
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+/* 左：一般的 */
+.why-negative {
+  border-top: 4px solid #ccc;
+}
+
+.why-positive {
+  border-top: 4px solid var(--color-accent);
+  background: #fffaf4; /* 超うっすらオレンジ系 */
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px var(--color-shadow);
+}
+
+.why-positive h3::before {
+  content: "✓ ";
+  color: var(--color-accent);
+  font-weight: bold;
+}
+.why-positive h3 {
+  font-weight: 700;
+}
+
+.why-positive li {
+  color: #333;
+}
+/* =========================================
+   Treatment Section
+========================================= */
+
+#treatment {
+  padding: 100px 0;
+}
+
+.treatment-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* 画像 */
+.treatment-image img {
+  width: 100%;
+  max-width: 650px;
+  border-radius: var(--radius);
+  box-shadow: 0 12px 30px var(--color-shadow);
+   transition: transform 0.4s ease;
+}
+
+
+
+.treatment-image img:hover {
+  transform: translateY(-5px);
+}
+
+/* テキスト */
+.treatment-content h3 {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+}
+
+.treatment-content p {
+  margin-bottom: 25px;
+  line-height: 1.8;
+  color: var(--color-text);
+}
+
+.treatment-points {
+  list-style: none;
+  padding: 0;
+}
+
+.treatment-points li {
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 22px;
+}
+
+.treatment-points li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-weight: bold;
+}
+
+.treatment-steps {
+  display: grid;
+  grid-template-columns: repeat(5, 240px);
+  justify-content: center;  /* ← これ重要 */
+  gap: 30px;
+  margin-top: 70px;
+}
+
+.step-item {
+  background: var(--color-white);
+  padding: 36px 25px;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 20px var(--color-shadow);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+}
+
+.step-number {
+  display: inline-block;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  font-weight: bold;
+  color: var(--color-accent);
+  margin-bottom: 12px;
+}
+
+.step-item h4 {
+  font-size: 1rem;
+  white-space: nowrap;
+  margin-bottom: 10px;
+}
+
+.step-item p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+/* =========================================
+   Case Section（改善事例）
+========================================= */
+
+#case {
+  padding: 120px 0;
+  background: #fafafa;
+}
+
+
+
+.case-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 540px);
+  justify-content: center;
+  gap: 50px;
+
+}
+
+
+
+.case-item {
+  background: var(--color-white);
+  padding: 45px 40px;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px var(--color-shadow);
+  transition: all 0.3s ease;
+}
+
+.case-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 45px var(--color-shadow);
+}
+
+/* タイトル */
+.case-item h3 {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+
+
+/* =========================================
+   Before / After ブロック
+========================================= */
+
+.case-block {
+  margin-bottom: 25px;
+}
+
+.case-block span {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+/* Before */
+.case-block.before span {
+  color: #999;
+}
+
+.case-block.before p {
+  background: #f5f5f5;
+  padding: 15px 18px;
+  border-radius: 8px;
+}
+
+/* After */
+.case-block.after span {
+  color: var(--color-accent);
+}
+
+.case-block.after p {
+  background: #fff7f0;
+  padding: 15px 18px;
+  border-radius: 8px;
+  border-left: 4px solid var(--color-accent);
+}
+
+/* 本文 */
+.case-block p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+
+.case-rating {
+  margin-top: 15px;
+  color: #f5b301;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+}
+
+
+
+/* =========================================
+   Reason Section
+========================================= */
+
+#reason {
+  padding: 120px 0;
+  background: #fafafa;
+}
+
+.reason-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 370px);
+  justify-content: center;
+  gap: 60px;
+  margin-top: 70px;
+}
+
+.reason-item {
+  background: var(--color-white);
+  padding: 50px 28px;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 25px var(--color-shadow);
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.reason-item:hover {
+  transform: translateY(-6px);
+}
+
+.reason-number {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: var(--color-accent);
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.reason-item h3 {
+  font-size: 1.15rem;
+  margin-bottom: 18px;
+  line-height: 1.6;
+}
+
+.reason-item p {
+  font-size: 0.95rem;
+  line-height: 1.9;
+  color: var(--color-text);
+}
+
+/* =========================================
+   Profile Section
+========================================= */
+
+#profile {
+  padding: 120px 0;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 70px;
+  align-items: center;
+  margin-top: 70px;
+}
+
+.profile-image img {
+  width: 100%;
+  max-width: 380px;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px var(--color-shadow);
+}
+
+
+.profile-content h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.profile-content p {
+  margin-bottom: 18px;
+  line-height: 1.9;
+  font-size: 0.95rem;
+  color: var(--color-text);
+}
+
+/* =========================================
+   Price Section
+========================================= */
+
+#price {
+  padding: 100px 0;
+}
+
+.price-lead {
+  text-align: center;
+  margin-bottom: 50px;
+  line-height: 1.8;
+  color: var(--color-text);
+}
+
+.price-table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 40px;
+}
+
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-white);
+  box-shadow: 0 10px 30px var(--color-shadow);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.price-table th {
+  background: #2f3e57;
+  color: #fff;
+  padding: 18px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.price-table td {
+  padding: 18px;
+  border-bottom: 1px solid #eee;
+}
+
+.price-table td:last-child {
+  font-weight: bold;
+  font-size: 1.05rem;
+}
+
+.price-note {
+  max-width: 700px;
+  margin: 0 auto;
+  list-style: none;
+  padding: 0;
+}
+
+.price-note li {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: #666;
+  text-align: left;
+}
+/* =========================================
+   FAQ Section
+========================================= */
+
+#faq {
+  padding: 100px 0;
+}
+
+.faq-list {
+  max-width: 800px;
+  margin: 50px auto 0;
+}
+
+
+.faq-question {
+  width: 100%;
+  padding: 20px;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-icon {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  padding: 0 20px;
+}
+
+.faq-answer p {
+  padding: 10px 0 20px;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* =========================================
+   FAQ Section
+========================================= */
+.faq-item {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+}
+
+
+.faq-question {
+  padding: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: var(--transition);
+  background: var(--color-bg-light);
+  padding: 0 20px;
+}
+
+.faq-item.active .faq-answer {
+  padding: 20px;
+  max-height: 500px;
+}
+
+/* =========================================
+   Final CTA
+========================================= */
+
+#final-cta {
+  background: linear-gradient(135deg, #0f2c54, #1d3f6e);
+  color: #fff;
+  text-align: center;
+  padding: 100px 0;
+}
+
+.cta-title {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.cta-text {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+.cta-button {
+  display: inline-block;
+  background: #fff;
+  color: #0f2c54;
+  padding: 16px 40px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* =========================================
+   Contact Section PC
+========================================= */
+
+#contact {
+  padding: 100px 0;
+  background: #f9fafc;
+}
+
+.contact-lead {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+/* フォーム本体 */
+.contact-form {
+  max-width: 650px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 50px;
+  border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+}
+
+/* フォームグループ */
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: 500;
+}
+
+/* input / textarea 共通 */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 0.95rem;
+  transition: 0.3s ease;
+  background: #fafafa;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #1d3f6e;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(29,63,110,0.08);
+}
+
+/* textarea */
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* エラー表示 */
+.error-message {
+  display: none;
+  font-size: 0.8rem;
+  color: #d9534f;
+  margin-top: 5px;
+}
+
+.input-error {
+  border-color: #d9534f !important;
+}
+
+.contact-button-wrapper {
+  text-align: center;
+  margin-top: 30px;
+}
+
+
+/* 送信ボタン */
+.contact-button {
+  display: inline-block;
+  background: #c9792a;
+  color: #fff;
+  padding: 14px 40px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.contact-button:hover {
+  background: #b7681f;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* =========================================
+   Footer
+========================================= */
+
+#footer {
+  background: #0f2c54;
+  color: #fff;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.footer-title {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.footer-info {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  opacity: 0.85;
+  margin-bottom: 25px;
+}
+
+.footer-copy {
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+
+/* =========================================
+   Fade In Animation
+========================================= */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================
+   Responsive (SP)
+========================================= */
+@media (max-width: 768px) {
+  .sp-only{
+    display: block;
+  }
+
+  .pc-only{
+    display: none;
+  }
+
+  :root {
+    --section-padding: 70px;
+  }
+
+
+/* =========================================
+   SP Header / Nav
+========================================= */
+
+  header .container {
+    height: 70px;
+    padding: 0 20px;
+  }
+
+  .logo {
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+
+  /* ハンバーガー表示 */
+  .hamburger {
+    display: flex;
+  }
+
+  /* モバイルメニュー */
+  .nav-menu {
+    position: fixed;
+    top: 70px; /* ヘッダー高さと揃える */
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background: #fff;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* 中央寄せ */
+
+    gap: 30px;
+    transition: 0.3s ease;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-link {
+    font-size: 18px;
+  }
+
+  .nav-cta {
+    margin-top: 10px;
+    padding: 12px 26px;
+  }
+
+
+
+
+.menu-close{
+display:block;
+position:absolute;
+top:20px;
+right:25px;
+background:none;
+border:none;
+font-size:28px;
+cursor:pointer;
+color:#333;
+}
+
+
+
+
+  /* =========================================
+   Hero Responsive（最終版）
+========================================= */
+
+  .hero {
+    padding-top: 140px;
+    padding-bottom: 90px;
+    background-position: 65% center; /* 右の施術者を少し見せる */
+  }
+
+  .hero-title {
+    font-size: 1.75rem;   /* ← 少しだけ下げる */
+    line-height: 1.35;
+    letter-spacing: 0.01em; /* ← ほんの少しだけ間隔 */
+    margin-bottom: 20px;
+  }
+
+  .hero-line1 {
+    white-space: nowrap;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 30px;
+  }
+
+  .hero-features {
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+
+  .hero-features li {
+    font-size: 0.75rem;
+    padding: 8px 14px;
+  }
+
+  .hero-btn {
+    width: 100%;
+    font-size: 1rem;
+    padding: 16px;
+  }
+
+  .hero-note {
+    font-size: 0.75rem;
+  }
+
+/* =========================================
+   Concerns Section Responsive (SP)
+========================================= */
+
+  /* グリッドを1列に */
+  .concerns-list {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    max-width: 100%;
+  }
+
+  /* カード余白を少しコンパクトに */
+  .concern-item {
+    padding: 24px 20px;
+    border-left-width: 3px; /* PCと統一 */
+  }
+
+  /* アイコンを少しだけ小さく */
+  .concern-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  /* テキスト調整 */
+  .concern-item p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* ブリッジテキスト */
+  .concerns-bridge {
+    font-size: 0.95rem;
+    margin-top: 32px;
+    line-height: 1.6;
+    padding: 0 10px;
+  }
+/* =========================================
+  Why Section Responsive (SP)
+========================================= */
+
+  .why-wrapper {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .why-card {
+    padding: 30px 24px;
+  }
+
+.why-positive {
+  box-shadow: 0 16px 32px rgba(0,0,0,0.08);
+}
+
+/* =========================================
+  Treatment Section Responsive (SP)
+========================================= */
+
+  .treatment-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .treatment-image,
+  .treatment-content {
+    width: 100%;
+  }
+
+  .treatment-image img {
+    width: 100%;
+    height: auto;
+  }
+
+
+  .treatment-steps {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+/* =========================================
+   CASE.  SP対応
+========================================= */
+
+  #case {
+    padding: 90px 0;
+  }
+
+  .case-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .case-item {
+    padding: 35px 25px;
+  }
+
+  .case-item h3 {
+    font-size: 1rem;
+  }
+
+
+  .case-block p {
+    line-height: 1.9;
+    font-size: 0.95rem;
+  }
+
+  .case-block {
+    padding: 20px;
+  }
+
+
+/* =========================================
+   Reason  SP対応
+========================================= */
+
+  #reason {
+    padding: 80px 0;
+  }
+
+  .reason-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    margin-top: 50px;
+  }
+
+  .reason-item {
+    padding: 35px 25px;
+  }
+
+  .reason-number {
+    font-size: 0.8rem;
+    margin-bottom: 12px;
+  }
+
+  .reason-item h3 {
+    font-size: 1rem;
+    margin-bottom: 14px;
+  }
+
+  .reason-item p {
+    font-size: 0.9rem;
+    line-height: 1.8;
+  }
+
+/* =========================================
+   Profile  SP対応
+========================================= */
+
+
+  #profile {
+    padding: 80px 0;
+  }
+
+  .profile-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-top: 50px;
+  }
+
+  .profile-image {
+    display: flex;
+    justify-content: center; /* ← これが本体 */
+  }
+
+  .profile-image img {
+    width: 85%;
+    max-width: 320px;
+  }
+
+
+
+  .profile-content {
+    text-align: left; /* ← 文章は左揃えの方が読みやすい */
+  }
+
+
+  .profile-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .profile-content p {
+    font-size: 0.9rem;
+    line-height: 1.8;
+  }
+
+
+/* =========================================
+   Price  SP対応
+========================================= */
+
+
+  #price {
+    padding: 80px 0;
+  }
+
+  .price-lead {
+    font-size: 0.95rem;
+    margin-bottom: 40px;
+  }
+
+  .price-table th,
+  .price-table td {
+    padding: 14px;
+    font-size: 0.9rem;
+  }
+
+  .price-note {
+    padding: 0 10px;
+  }
+
+
+  /* =========================================
+   Final CTA SP
+========================================= */
+
+  #final-cta {
+    padding: 70px 20px;
+  }
+
+  .cta-title {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    margin-bottom: 18px;
+  }
+
+  .cta-text {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+  }
+
+  .cta-button {
+    width: 100%;
+    max-width: 320px;
+    padding: 14px 0;
+    font-size: 1rem;
+  }
+
+/* =========================================
+   Contact Section SP
+========================================= */
+
+  #contact {
+    padding: 70px 20px;
+  }
+
+  .contact-lead {
+    font-size: 0.9rem;
+    margin-bottom: 35px;
+  }
+
+  .contact-form {
+    padding: 30px 20px;
+    border-radius: 10px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.9rem;
+    padding: 12px 14px;
+  }
+
+  
+  .contact-button {
+    width: 100%;
+    padding: 14px 0;
+    font-size: 0.95rem;
+    border-radius: 50px;
+  }
+
+}
+
+
+/* -------JS追加のCSS---------- */
+
+/* CTAパルス */
+.pulse {
+  animation: pulseAnim 0.8s ease;
+}
+
+@keyframes pulseAnim {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* ヘッダースクロール変化 */
+header.scrolled {
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(8px);
+}
